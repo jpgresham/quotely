@@ -22,6 +22,11 @@ public class ApplicationTest {
     }
 
     @Test
+    public void testApplicationWithInvalidLanguage() {
+        assertThrows(IllegalArgumentException.class, () ->new Application(new String[]{"language=de"}));
+    }
+
+    @Test
     public void testApplicationWithEmptyArguments() {
         assertThrows(MissingLanguageException.class, () -> new Application(new String[0]));
     }
